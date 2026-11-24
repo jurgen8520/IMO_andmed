@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="et">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Rahvastikukaart</title>
+
+
+    <!-- Leaflet -->
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet/dist/leaflet.css"
+    >
+
+
+    <!-- Oma CSS -->
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+<div id="container">
+
+    <div id="sidebar">
+
+
+        <!-- =========================================
+             AASTA
+             ========================================= -->
+
+        <div class="section">
+
+            <h3>AASTA</h3>
+
+            <div id="yearValue">
+                <span id="yearLabel">2026</span>
+            </div>
+
+            <input
+                type="range"
+                id="yearSlider"
+                min="1989"
+                max="2026"
+                value="2026"
+            >
+
+        </div>
+
+
+        <!-- =========================================
+             RUUMIÜKSUS
+             ========================================= -->
+
+        <div class="section">
+
+            <h3>RUUMIÜKSUS</h3>
+
+
+            <label class="layerOption">
+
+                <input
+                    type="radio"
+                    name="layer"
+                    id="kandid"
+                    checked
+                >
+
+                <span class="radioCircle"></span>
+
+                Kandid
+
+            </label>
+
+
+            <label class="layerOption">
+
+                <input
+                    type="radio"
+                    name="layer"
+                    id="asumid"
+                >
+
+                <span class="radioCircle"></span>
+
+                Tallinna asumid
+
+            </label>
+
+            <label class="layerOption">
+
+                <input
+                    type="radio"
+                    name="layer"
+                    id="vaiksedasumid"
+                >
+
+                <span class="radioCircle"></span>
+
+                Tallinna allasumid
+
+            </label>
+
+            <label class="layerOption">
+
+                <input
+                    type="radio"
+                    name="layer"
+                    id="tartuasumid"
+                >
+
+                <span class="radioCircle"></span>
+
+                Tartu asumid
+
+            </label>
+            <label class="layerOption">
+
+                <input
+                    type="radio"
+                    name="layer"
+                    id="grid1000"
+                >
+
+                <span class="radioCircle"></span>
+
+                1000x1000 m ruudustik
+
+            </label>
+
+            <label class="layerOption">
+
+                <input
+                    type="radio"
+                    name="layer"
+                    id="grid500"
+                >
+
+                <span class="radioCircle"></span>
+
+                500x500 m ruudustik
+
+            </label>
+
+            <label class="layerOption">
+
+                <input
+                    type="radio"
+                    name="layer"
+                    id="grid250"
+                >
+
+                <span class="radioCircle"></span>
+
+                250x250 m ruudustik
+
+            </label>
+
+            <label class="layerOption">
+
+                <input
+                    type="radio"
+                    name="layer"
+                    id="grid100"
+                >
+
+                <span class="radioCircle"></span>
+
+                100x100 m ruudustik
+
+            </label>
+
+        </div>
+
+
+        <!-- =========================================
+             TAUSTAKIHID
+             ========================================= -->
+
+<div class="section">
+
+    <h3>TAUSTAKIHID</h3>
+
+    <label class="layerOption checkboxOption">
+        <input
+            type="checkbox"
+            id="maakonnad"
+        >
+        <span class="checkBox"></span>
+        Maakonnad
+    </label>
+
+    <label class="layerOption checkboxOption">
+        <input
+            type="checkbox"
+            id="omavalitsused"
+        >
+        <span class="checkBox"></span>
+        Omavalitsused
+    </label>
+
+    <label class="layerOption checkboxOption">
+        <input
+            type="checkbox"
+            id="asustusyksused"
+        >
+        <span class="checkBox"></span>
+        Asustusüksused
+    </label>
+
+</div>
+
+
+        <!-- =========================================
+             TEEMA
+             ========================================= -->
+
+        <div class="section">
+
+            <h3>TEEMA</h3>
+
+            <select id="themeSelect">
+
+                <option value="tyhi">
+                    Ilma teemata
+                </option>
+
+                <option value="tihedus">
+                    Rahvastikutihedus
+                </option>
+
+                <option value="emakeel">
+                    Muukeelsete osakaal
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- =========================================
+             VÄÄRTUSE LEGEND
+             ========================================= -->
+
+        <div
+            class="section"
+            id="legendSection"
+        >
+
+            <h3 id="legendTitle">
+                VÄÄRTUS
+            </h3>
+
+            <div id="legendContainer"></div>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- =========================================
+         KAART
+         ========================================= -->
+
+    <div id="map"></div>
+
+</div>
+
+
+<!-- =============================================
+     LEAFLET
+     ============================================= -->
+
+<script
+    src="https://unpkg.com/leaflet/dist/leaflet.js">
+</script>
+
+
+<!-- =============================================
+     PROJ4
+     ============================================= -->
+
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.9.0/proj4.js">
+</script>
+
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/proj4leaflet/1.0.2/proj4leaflet.js">
+</script>
+
+
+<!-- =============================================
+     OMA JAVASCRIPT
+     ============================================= -->
+
+<script
+    src="js/map.js">
+</script>
+
+
+</body>
+</html>
+
