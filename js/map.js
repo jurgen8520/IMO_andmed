@@ -88,7 +88,7 @@ const kihid = {
         radio: "grid1000"
     },
     vaiksedasumid: {
-        fail: "data/Tallinn_asumid_vaiksed.geojson",
+        fail: "data/tallinn_asumid_vaiksed.geojson",
         nimevali: "all_asum_nimi",
         popupLabel: "Asum",
         radio: "vaiksedasumid"
